@@ -4,10 +4,10 @@ import creator from './creator';
 import initialState from './initialState';
 
 export default handleActions({
-  [creator.open](state, { payload: message }) {
+  [creator.openSnackBar](state, { payload: message }) {
     return { ...state, open: true, message };
   },
-  [creator.close](state) {
+  [creator.closeSnackBar](state) {
     return { ...state, open: false, message: '' };
   },
 }, initialState);

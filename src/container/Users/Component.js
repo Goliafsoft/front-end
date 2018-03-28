@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { page } from '../../hoc';
 
+@page
 class CustomComponent extends Component {
   static propTypes = {
     users: PropTypes.string,

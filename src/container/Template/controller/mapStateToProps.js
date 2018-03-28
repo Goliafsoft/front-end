@@ -1,6 +1,8 @@
+import { selector } from '../../../reducer/snackBar';
+
 export default function (state) {
   return {
-    openSnackBar: state.snackBar.open,
-    snackBarMessage: state.snackBar.message,
+    openSnackBar: selector.getIsSnackBarOpen(state),
+    snackBarMessage: selector.getSnackBarMessage(state),
   };
 }
