@@ -18,7 +18,6 @@ class Home extends PureComponent {
   };
 
   render() {
-    console.log('render');
     const { hello } = this.state;
     const { home, classes } = this.props;
     return (
