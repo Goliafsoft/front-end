@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider } from 'material-ui/styles';
-import Reboot from 'material-ui/Reboot';
+import CssBaseline from 'material-ui/CssBaseline';
+
 import theme from './theme';
 
 const CustomComponent = ({ children }) => (
   <MuiThemeProvider theme={theme}>
-    <Reboot />
+    <CssBaseline />
     {children}
   </MuiThemeProvider>
 );
