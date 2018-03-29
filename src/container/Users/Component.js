@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import { page } from '../../hoc';
 
 @page
 class CustomComponent extends Component {
   static propTypes = {
-    users: PropTypes.string,
+    world: PropTypes.string,
     classes: PropTypes.shape().isRequired,
   };
 
   static defaultProps = {
-    users: 'Users',
+    world: 'word',
   };
 
   state = {
@@ -19,10 +20,10 @@ class CustomComponent extends Component {
 
   render() {
     const { hello } = this.state;
-    const { users, classes } = this.props;
+    const { world, classes } = this.props;
     return (
       <div className={classes.base}>
-        {hello} {users}
+        {hello} {world}
       </div>
     );
   }

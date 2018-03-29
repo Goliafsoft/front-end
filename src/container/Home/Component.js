@@ -1,16 +1,17 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import { page } from '../../hoc';
 
 @page
-class Home extends PureComponent {
+class CustomComponent extends Component {
   static propTypes = {
-    home: PropTypes.string,
+    world: PropTypes.string,
     classes: PropTypes.shape().isRequired,
   };
 
   static defaultProps = {
-    home: 'Home',
+    world: 'Home',
   };
 
   state = {
@@ -19,13 +20,13 @@ class Home extends PureComponent {
 
   render() {
     const { hello } = this.state;
-    const { home, classes } = this.props;
+    const { world, classes } = this.props;
     return (
       <div className={classes.base}>
-        {hello} {home}
+        {hello} {world}
       </div>
     );
   }
 }
 
-export default Home;
+export default CustomComponent;
