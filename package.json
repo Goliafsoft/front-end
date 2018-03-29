@@ -43,6 +43,7 @@
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
+    "redux-form": "^7.3.0",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
     "webpack-cleanup-plugin": "^0.5.1",
