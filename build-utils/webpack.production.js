@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const config = {
   devtool: 'source-map',
@@ -8,6 +9,9 @@ const config = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
+    }),
+    new SWPrecacheWebpackPlugin({
+      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/, /\.html$/],
     }),
   ],
 };

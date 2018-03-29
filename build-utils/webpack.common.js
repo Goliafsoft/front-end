@@ -1,7 +1,5 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 const commonPath = require('./commonPath');
 
@@ -27,22 +25,5 @@ module.exports = {
       title: 'Admin Panel',
       inject: 'body',
     }),
-    new FaviconsWebpackPlugin({
-      logo: './src/favicon.jpg',
-      inject: true,
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: true,
-        favicons: true,
-        firefox: true,
-        opengraph: true,
-        twitter: true,
-        yandex: true,
-        windows: true,
-      },
-    }),
-    new WebpackCleanupPlugin(),
   ],
 };
