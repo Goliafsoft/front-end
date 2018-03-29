@@ -19,7 +19,6 @@ class CustomComponent extends Component {
   };
 
   render() {
-    console.log(tratata);
     const { hello } = this.state;
     const { world, classes } = this.props;
     return (
