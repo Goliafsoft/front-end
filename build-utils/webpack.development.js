@@ -5,12 +5,7 @@ const config = {
   },
   devtool: 'eval',
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
+    rules: [],
   },
 };
 

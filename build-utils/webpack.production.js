@@ -1,5 +1,5 @@
-const webpack = require('webpack');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const config = {
   devtool: 'source-map',
@@ -7,11 +7,12 @@ const config = {
     rules: [],
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-    }),
     new SWPrecacheWebpackPlugin({
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/, /\.html$/],
+      minify: true,
+    }),
+    new CompressionPlugin({
+      test: /\.js/,
     }),
   ],
 };
