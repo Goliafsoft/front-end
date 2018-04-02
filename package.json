@@ -16,6 +16,7 @@
     "analyze": "rimraf stats.json && webpack --mode development --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "dependencies": {
+    "classname": "^0.0.0",
     "eslint-plugin-import": "^2.10.0",
     "lodash": "^4.17.5",
     "material-ui": "^1.0.0-beta.39",

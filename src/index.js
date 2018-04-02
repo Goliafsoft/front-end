@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-if ('serviceWorker' in navigator && PRODUCTION) {
+if (PRODUCTION && 'serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js');
 }
 
