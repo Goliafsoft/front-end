@@ -6,8 +6,7 @@ import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import Badge from 'material-ui/Badge';
-import MailIcon from 'material-ui-icons/Mail';
-import AddAlert from 'material-ui-icons/AddAlert';
+import Notifications from 'material-ui-icons/Notifications';
 import Avatar from 'material-ui/Avatar';
 import classNames from 'classname';
 
@@ -21,14 +20,9 @@ const Component = ({ classes, open, toggle }) => (
         Admin Panel
       </Typography>
       <div>
-        <Badge color="error" badgeContent={10} classes={{ badge: classes.badge }}>
+        <Badge color="error" badgeContent={10} classes={{ badge: classes.badge, root: classes.icons }}>
           <IconButton color="secondary">
-            <AddAlert />
-          </IconButton>
-        </Badge>
-        <Badge color="error" badgeContent={4} classes={{ badge: classes.badge }}>
-          <IconButton color="secondary">
-            <MailIcon />
+            <Notifications />
           </IconButton>
         </Badge>
         <IconButton
@@ -36,7 +30,7 @@ const Component = ({ classes, open, toggle }) => (
           aria-haspopup="true"
           color="secondary"
         >
-          <Avatar className={classes.avatar}>DM</Avatar>
+          <Avatar className={classes.avatar}>MD</Avatar>
         </IconButton>
       </div>
     </Toolbar>

@@ -18,12 +18,15 @@ const style = ({
     top: 0,
     right: 0,
   },
+  icons: {
+    marginRight: 2 * spacing.unit,
+  },
   avatar: {
     width: 4 * spacing.unit,
     height: 4 * spacing.unit,
     fontSize: '1rem',
-    color: palette.primary.main,
-    background: palette.secondary.main,
+    color: palette.secondary.main,
+    background: palette.primary.light,
   },
 });
 

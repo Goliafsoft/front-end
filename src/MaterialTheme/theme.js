@@ -3,16 +3,17 @@ import teal from 'material-ui/colors/teal';
 import grey from 'material-ui/colors/grey';
 
 const OPEN_SIDE_BAR_WIDTH = 30;
-const CLOSE_SIDE_BAR_WIDTH = 5;
+const CLOSE_SIDE_BAR_WIDTH = 7;
 const HEADER_HEIGHT = 8;
+
 const baseTheme = createMuiTheme({});
 
 export default createMuiTheme({
   palette: {
     primary: {
-      light: teal[300],
-      main: teal[600],
-      dark: teal[800],
+      light: teal.A700,
+      main: teal[800],
+      dark: teal[900],
     },
     secondary: {
       light: grey[100],
