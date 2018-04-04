@@ -1,13 +1,15 @@
 import { withStyles } from 'material-ui/styles';
 
-const style = ({ spacing, palette, sideBar }) => ({
-  header: {
-    width: `calc(100vw - ${sideBar.getWidth()}px)`,
-    float: 'left',
-    transition: sideBar.transition,
+const style = ({
+  spacing, palette, sideBar, header,
+}) => ({
+  tool: {
+    height: header.height,
+    marginLeft: sideBar.getWidth(),
+    transition: sideBar.transition('margin'),
   },
-  headerFull: {
-    width: `calc(100vw - ${sideBar.getWidth(true)}px)`,
+  toolOpen: {
+    marginLeft: sideBar.getWidth(true),
   },
   title: {
     flex: 1,

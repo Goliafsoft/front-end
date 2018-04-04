@@ -1,16 +1,16 @@
 import { withStyles } from 'material-ui/styles';
 
-const style = ({ sideBar }) => ({
+const style = ({ sideBar, header, spacing }) => ({
   wrapper: {
-    width: `calc(100vw - ${sideBar.getWidth()}px)`,
-    transition: sideBar.transition,
-    height: 'calc(100vh - 64px)',
+    paddingLeft: sideBar.getWidth(),
+    width: '100%',
+    transition: sideBar.transition('padding'),
+    height: `calc(100vh - ${header.height * spacing.unit}px)`,
     display: 'flex',
     flexDirection: 'column',
-    float: 'right',
   },
   wrapperFull: {
-    width: `calc(100vw - ${sideBar.getWidth(true)}px)`,
+    paddingLeft: sideBar.getWidth(true),
   },
 });
 

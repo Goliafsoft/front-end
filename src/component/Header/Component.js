@@ -12,8 +12,8 @@ import Avatar from 'material-ui/Avatar';
 import classNames from 'classname';
 
 const Component = ({ classes, open, toggle }) => (
-  <AppBar position="static" className={classNames(classes.header, { [classes.headerFull]: open })}>
-    <Toolbar>
+  <AppBar position="static">
+    <Toolbar className={classNames(classes.tool, { [classes.toolOpen]: open })}>
       <IconButton aria-label="Menu" color="secondary" onClick={toggle}>
         <MenuIcon />
       </IconButton>

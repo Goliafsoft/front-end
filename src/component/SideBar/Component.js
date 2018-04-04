@@ -4,7 +4,8 @@ import classNames from 'classname';
 
 const SideBar = ({ classes, open }) => (
   <div className={classNames(classes.sideBarClose, { [classes.sideBarOpen]: open })}>
-    SideBar
+    <div className={classes.logo}> LOGO </div>
+    menu
   </div>
 );
 
