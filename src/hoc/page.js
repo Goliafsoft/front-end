@@ -2,7 +2,7 @@ import { compose, lifecycle, withHandlers, branch, withState, renderComponent } 
 import { CriticalError } from '../component';
 
 export default compose(
-  withState('state', 'setState', {}),
+  withState('state', 'setState', { hasError: false }),
   lifecycle({
     shouldComponentUpdate: ({ state }) => state.hasError,
     componentDidCatch() {

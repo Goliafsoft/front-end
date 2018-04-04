@@ -1,6 +1,4 @@
-import { withStyles } from 'material-ui/styles';
-
 import Component from './Component';
-import style from './style';
+import withStyle from './withStyle';
 
-export default withStyles(style)(Component);
+export default withStyle(Component);

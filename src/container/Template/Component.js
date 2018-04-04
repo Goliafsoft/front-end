@@ -7,7 +7,9 @@ const Component = ({
 }) => (
   <div className={classes.base}>
     <Header />
-    {children}
+    <div className={classes.wrapper}>
+      {children}
+    </div>
     <SnackBar open={openSnackBar} message={snackBarMessage} onClose={closeSnackBar} />
   </div>
 );

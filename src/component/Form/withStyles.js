@@ -1,10 +1,12 @@
 import { withStyles } from 'material-ui/styles';
 
 const style = () => ({
-  wrapper: {
-    height: 'calc(100vh - 64px)',
+  base: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
+    height: '100%',
+    justifyContent: 'center',
   },
 });
 

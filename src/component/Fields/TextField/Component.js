@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -13,20 +13,23 @@ const CustomTextField = ({
   label,
   tooltip,
   onIconClick,
+  autoComplete,
   Icon,
+  classes,
   meta: { touched, error },
   ...custom
 }) => {
   const IconElement = onIconClick ? (
-    <IconButton onClick={onIconClick}>
+    <IconButton onClick={onIconClick} color="primary">
       {Icon}
     </IconButton>)
-    : Icon;
+    : cloneElement(Icon, { color: 'primary', className: classes.icon });
   return (
-    <FormControl>
+    <FormControl className={classes.input}>
       <InputLabel>{error || label}</InputLabel>
       <Input
         error={touched && !!error}
+        autoComplete={autoComplete}
         {...input}
         {...custom}
         endAdornment={
@@ -47,6 +50,7 @@ CustomTextField.propTypes = {
   Icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool]),
   tooltip: PropTypes.string,
   onIconClick: PropTypes.func,
+  autoComplete: PropTypes.string,
   meta: PropTypes.shape({
     touched: PropTypes.bool.isRequired,
     error: PropTypes.string,
@@ -58,6 +62,7 @@ CustomTextField.defaultProps = {
   tooltip: '',
   onIconClick: undefined,
   Icon: <Info />,
+  autoComplete: 'off',
 };
 
 export default CustomTextField;

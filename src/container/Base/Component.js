@@ -15,6 +15,10 @@ class CustomComponent extends Component {
     hello: 'hello',
   };
 
+  submit = () => {
+
+  };
+
   render() {
     const { hello } = this.state;
     const { world, classes } = this.props;

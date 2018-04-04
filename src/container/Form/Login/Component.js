@@ -3,8 +3,11 @@ import { Field } from 'redux-form';
 import PropTypes from 'prop-types';
 import Visibility from 'material-ui-icons/Visibility';
 import VisibilityOff from 'material-ui-icons/VisibilityOff';
-import { TextField } from '../../../component/Fields';
 
+import { TextField } from '../../../component/Fields';
+import { SaveButton } from '../../../component/Button';
+
+import Form from '../../../component/Form';
 
 class LoginForm extends Component {
   state = {
@@ -16,10 +19,10 @@ class LoginForm extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, handleSubmit } = this.props;
     const { showPassword } = this.state;
     return (
-      <form className={classes.base} >
+      <Form className={classes.base} handleSubmit={handleSubmit}>
         <Field
           name="name"
           label="Name"
@@ -36,13 +39,15 @@ class LoginForm extends Component {
           tooltip={showPassword ? 'Hide Password' : 'Show Password'}
           Icon={showPassword ? <Visibility /> : <VisibilityOff />}
         />
-      </form>
+        <SaveButton label="LOG IN" />
+      </Form>
     );
   }
 }
 
 LoginForm.propTypes = {
   classes: PropTypes.shape().isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default LoginForm;
