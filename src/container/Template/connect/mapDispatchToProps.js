@@ -1,7 +1,10 @@
-import { creator } from '../../../reducer/snackBar';
+import { creator as snackBarCreator } from '../../../reducer/snackBar';
+import { creator as sideBarCreator } from '../../../reducer/sideBar';
 
-const { closeSnackBar } = creator;
+const { closeSnackBar } = snackBarCreator;
+const { toggleSideBar } = sideBarCreator;
 
 export default {
   closeSnackBar,
+  toggleSideBar,
 };

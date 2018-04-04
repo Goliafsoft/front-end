@@ -9,11 +9,12 @@ import Badge from 'material-ui/Badge';
 import MailIcon from 'material-ui-icons/Mail';
 import AddAlert from 'material-ui-icons/AddAlert';
 import Avatar from 'material-ui/Avatar';
+import classNames from 'classname';
 
-const Component = ({ classes }) => (
-  <AppBar position="static">
+const Component = ({ classes, open, toggle }) => (
+  <AppBar position="static" className={classNames(classes.header, { [classes.headerFull]: open })}>
     <Toolbar>
-      <IconButton aria-label="Menu" color="secondary">
+      <IconButton aria-label="Menu" color="secondary" onClick={toggle}>
         <MenuIcon />
       </IconButton>
       <Typography className={classes.title} type="title" color="secondary">
@@ -44,6 +45,8 @@ const Component = ({ classes }) => (
 
 Component.propTypes = {
   classes: PropTypes.shape().isRequired,
+  open: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
 };
 
 export default Component;

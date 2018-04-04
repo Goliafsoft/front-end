@@ -1,8 +1,10 @@
-import { selector } from '../../../reducer/snackBar';
+import { selector as selectorSnackBar } from '../../../reducer/snackBar';
+import { selector as selectorSideBar } from '../../../reducer/sideBar';
 
 export default function (state) {
   return {
-    openSnackBar: selector.getIsSnackBarOpen(state),
-    snackBarMessage: selector.getSnackBarMessage(state),
+    openSnackBar: selectorSnackBar.getIsSnackBarOpen(state),
+    snackBarMessage: selectorSnackBar.getSnackBarMessage(state),
+    isSideBarOpen: selectorSideBar.isSideBarOpen(state),
   };
 }
