@@ -18,7 +18,7 @@ export default createMuiTheme({
     secondary: {
       light: grey[100],
       main: grey[100],
-      dark: grey[700],
+      dark: grey[500],
     },
   },
   header: {
@@ -27,8 +27,9 @@ export default createMuiTheme({
   sideBar: {
     openWidth: OPEN_SIDE_BAR_WIDTH,
     closeWidth: CLOSE_SIDE_BAR_WIDTH,
-    background: grey[800],
-    transition: (val = 'width') => `${val} 0.3s ${baseTheme.transitions.easing.easeInOut}`,
+    color: grey[500],
+    background: 'rgba(0,0,0, 0.7)',
+    transition: (val = 'width') => `${val} .5s ${baseTheme.transitions.easing.easeInOut}`,
     getWidth(isOpen = false) {
       const width = isOpen ? OPEN_SIDE_BAR_WIDTH : CLOSE_SIDE_BAR_WIDTH;
       return width * baseTheme.spacing.unit;

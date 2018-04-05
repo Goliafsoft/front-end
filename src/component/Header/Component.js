@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
@@ -9,38 +9,64 @@ import Badge from 'material-ui/Badge';
 import Notifications from 'material-ui-icons/Notifications';
 import Avatar from 'material-ui/Avatar';
 import classNames from 'classname';
+import Fullscreen from 'material-ui-icons/Fullscreen';
+import FullscreenExit from 'material-ui-icons/FullscreenExit';
+import screenfull from 'screenfull';
 
-const Component = ({ classes, open, toggle }) => (
-  <AppBar position="static">
-    <Toolbar className={classNames(classes.tool, { [classes.toolOpen]: open })}>
-      <IconButton aria-label="Menu" color="secondary" onClick={toggle}>
-        <MenuIcon />
-      </IconButton>
-      <Typography className={classes.title} type="title" color="secondary">
-        Admin Panel
-      </Typography>
-      <div>
-        <Badge color="error" badgeContent={10} classes={{ badge: classes.badge, root: classes.icons }}>
-          <IconButton color="secondary">
-            <Notifications />
+class Header extends Component {
+  state = {
+    fullScreen: false,
+    fullScreenEnable: screenfull.enabled,
+  };
+
+
+  componentDidMount() {
+    screenfull.onchange(() => this.setState(({ fullScreen }) => ({ fullScreen: !fullScreen })));
+  }
+
+  toggleFullScreen = () => {
+    screenfull.toggle();
+  };
+
+  render() {
+    const { fullScreen, fullScreenEnable } = this.state;
+    const { classes, open, toggle } = this.props;
+    const badgeClasses = { badge: classes.badge, root: classes.icons };
+    const toolbarClassName = classNames(classes.tool, { [classes.toolOpen]: open });
+
+    return (
+      <AppBar position="static">
+        <Toolbar className={toolbarClassName}>
+          <IconButton aria-label="Menu" color="secondary" onClick={toggle}>
+            <MenuIcon />
           </IconButton>
-        </Badge>
-        <IconButton
-          aria-owns="menu-appbar"
-          aria-haspopup="true"
-          color="secondary"
-        >
-          <Avatar className={classes.avatar}>MD</Avatar>
-        </IconButton>
-      </div>
-    </Toolbar>
-  </AppBar>
-);
+          <Typography className={classes.title} type="title" color="secondary">
+            Admin Panel
+            {fullScreenEnable && (
+              <IconButton color="secondary" onClick={this.toggleFullScreen}>
+                {fullScreen ? <FullscreenExit /> : <Fullscreen />}
+              </IconButton>)}
+          </Typography>
+          <div>
+            <Badge color="error" badgeContent={10} classes={badgeClasses}>
+              <IconButton color="secondary">
+                <Notifications />
+              </IconButton>
+            </Badge>
+            <IconButton aria-owns="menu-appbar" aria-haspopup="true" color="secondary">
+              <Avatar className={classes.avatar}>MD</Avatar>
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+    );
+  }
+}
 
-Component.propTypes = {
+Header.propTypes = {
   classes: PropTypes.shape().isRequired,
   open: PropTypes.bool.isRequired,
   toggle: PropTypes.func.isRequired,
 };
 
-export default Component;
+export default Header;

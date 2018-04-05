@@ -4,7 +4,7 @@ const style = ({
   spacing, palette, sideBar, header,
 }) => ({
   tool: {
-    height: header.height,
+    height: header.height * spacing.unit,
     marginLeft: sideBar.getWidth(),
     transition: sideBar.transition('margin'),
   },

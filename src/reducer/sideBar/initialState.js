@@ -1,3 +1,3 @@
 export default {
-  open: true,
+  open: localStorage.getItem('isMenuOpen') === 'true',
 };

@@ -27,7 +27,7 @@ module.exports = mode => ({
       PRODUCTION: JSON.stringify(mode !== 'development'),
     }),
     new HtmlWebPackPlugin({
-      favicon: './src/favicon.jpg',
+      favicon: './src/favicon.ico',
       template: './src/index.html',
       fileName: './index.html',
       title: 'Admin Panel',

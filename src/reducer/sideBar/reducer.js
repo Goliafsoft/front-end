@@ -5,6 +5,8 @@ import initialState from './initialState';
 
 export default handleActions({
   [creator.toggleSideBar](state) {
-    return { ...state, open: !state.open };
+    const open = !state.open;
+    localStorage.setItem('isMenuOpen', open);
+    return { ...state, open };
   },
 }, initialState);
