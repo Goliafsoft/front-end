@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { withRouter } from 'react-router';
 import { HomePage, UsersPage, LoginPage } from '../container';
 
 const SwitchPages = () => (
@@ -8,7 +7,8 @@ const SwitchPages = () => (
     <Route exact path="/" component={HomePage} />
     <Route path="/users" component={UsersPage} />
     <Route path="/login" component={LoginPage} />
+    <Route component={() => <div>notfound</div>} />
   </Switch>
 );
 
-export default withRouter(SwitchPages);
+export default SwitchPages;

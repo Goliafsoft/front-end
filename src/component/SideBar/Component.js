@@ -1,28 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
+import Button from 'material-ui/Button';
+import history from '../../Route/history';
+
 import MenuElement from './MenuElement';
 import config from './config';
 
-const SideBar = ({ classes, open }) => {
-  const sideBarClassName = classNames(classes.sideBarClose, { [classes.sideBarOpen]: open });
+class SideBar extends Component {
+  static contextTypes = {
+    history: PropTypes.shape(),
+  };
 
-  return (
-    <div className={sideBarClassName}>
-      <div className={classes.sideBarInclude}>
-        <div className={classes.logo}>
-          <img className={classes.logoImage} src="/src/asset/image/logo.svg" alt="logo" />
+  constructor(props) {
+    super(props);
+    this.history = history;
+  }
+
+  onLogoClick = () => this.changeUrl('/');
+
+  changeUrl = (url) => {
+    console.log(this);
+    this.history.push(url);
+  };
+
+  render() {
+    const { classes, open } = this.props;
+
+    const sideBarClassName = classNames(classes.sideBarClose, { [classes.sideBarOpen]: open });
+    const buttonClassName = classNames(classes.button, classes.logo);
+    const logoClasses = { root: buttonClassName, label: classes.label };
+
+    return (
+      <div className={sideBarClassName}>
+        <div className={classes.sideBarInclude}>
+          <Button fullWidth classes={logoClasses} onClick={this.onLogoClick}>
+            <img className={classes.logoImage} src="/src/asset/image/logo.svg" alt="logo" />
+            Eight pixels
+          </Button>
+          <menu className={classes.menu}>
+            {config.menu.map(({ id, ...rest }) => (
+              <li key={id}>
+                <MenuElement classes={classes} showTooltip={!open} onChange={this.changeUrl} {...rest} />
+              </li>
+            ))}
+          </menu>
         </div>
-        <menu className={classes.menu}>
-          {config.menu.map(({ id, label, iconLabel }) => (
-            <li key={id}>
-              <MenuElement classes={classes} open={open} label={label} iconName={iconLabel} />
-            </li>
-          ))}
-        </menu>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 SideBar.propTypes = {

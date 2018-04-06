@@ -29,7 +29,7 @@ export default createMuiTheme({
     closeWidth: CLOSE_SIDE_BAR_WIDTH,
     color: grey[500],
     background: 'rgba(0,0,0, 0.7)',
-    transition: (val = 'width') => `${val} .5s ${baseTheme.transitions.easing.easeInOut}`,
+    transition: (val = 'width') => `${val} .35s ${baseTheme.transitions.easing.easeInOut}`,
     getWidth(isOpen = false) {
       const width = isOpen ? OPEN_SIDE_BAR_WIDTH : CLOSE_SIDE_BAR_WIDTH;
       return width * baseTheme.spacing.unit;

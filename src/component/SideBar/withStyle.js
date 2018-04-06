@@ -5,25 +5,22 @@ const style = ({
 }) => ({
   sideBarClose: {
     width: sideBar.getWidth(),
-    transition: sideBar.transition(),
+    transition: sideBar.transition(''),
     position: 'absolute',
     height: '100vh',
     backgroundImage: 'url("src/asset/image/side-bar.jpg")',
     backgroundSize: 'auto 100%',
-    backgroundPositionX: 300,
+    backgroundPositionX: 182,
     backgroundPosition: 'center',
   },
   sideBarOpen: {
     width: sideBar.getWidth(true),
-  },
-  logo: {
-    height: header.height * spacing.unit,
-    display: 'flex',
+    backgroundPositionX: 300,
   },
   logoImage: {
     width: 50,
-    marginLeft: 2,
-    marginRight: 2,
+    marginLeft: 3,
+    marginRight: 3,
   },
   menu: {
     listStyle: 'none',
@@ -40,6 +37,9 @@ const style = ({
     '&:hover': {
       color: palette.secondary.main,
     },
+    '&:hover div': {
+      height: '100%',
+    },
   },
   sideBarInclude: {
     background: sideBar.background,
@@ -49,10 +49,23 @@ const style = ({
     width: 'auto',
     whiteSpace: 'nowrap',
   },
+  strip: {
+    height: 0,
+    width: 0.5 * spacing.unit,
+    background: palette.primary.dark,
+    position: 'absolute',
+    transition: sideBar.transition(''),
+  },
   icon: {
-    fontSize: 32,
-    marginLeft: (sideBar.getWidth() - 32) / 2,
-    marginRight: (sideBar.getWidth() - 32) / 2,
+    fontSize: 4 * spacing.unit,
+    marginLeft: (sideBar.getWidth() - (4 * spacing.unit)) / 2,
+    marginRight: (sideBar.getWidth() - (4 * spacing.unit)) / 2,
+  },
+  logo: {
+    height: header.height * spacing.unit,
+    display: 'flex',
+    fontSize: '1rem',
+    color: palette.secondary.main,
   },
 });
 

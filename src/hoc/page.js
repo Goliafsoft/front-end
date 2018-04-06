@@ -16,6 +16,6 @@ export default compose(
   ),
   withHandlers({
     // todo implement change url function
-    goTo: () => () => false,
+    goTo: () => () => true,
   }),
 );

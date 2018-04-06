@@ -5,14 +5,15 @@ import Icon from 'material-ui/Icon';
 import Tooltip from 'material-ui/Tooltip';
 
 const SideBar = ({
-  classes, open, label, iconName,
+  classes, showTooltip, label, iconName, onChange, href,
 }) => {
   const buttonClasses = { root: classes.button, label: classes.label };
-  const tooltip = open ? '' : label;
+  const tooltip = showTooltip ? label : '';
 
   return (
     <Tooltip title={tooltip} placement="right">
-      <Button fullWidth classes={buttonClasses}>
+      <Button onClick={() => onChange(href)} fullWidth classes={buttonClasses}>
+        <div className={classes.strip} />
         <Icon className={classes.icon} >{iconName}</Icon>
         {label}
       </Button>
@@ -22,9 +23,11 @@ const SideBar = ({
 
 SideBar.propTypes = {
   classes: PropTypes.shape().isRequired,
-  open: PropTypes.bool.isRequired,
+  showTooltip: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
   iconName: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  href: PropTypes.string.isRequired,
 };
 
 export default SideBar;

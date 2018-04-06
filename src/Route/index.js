@@ -1,14 +1,16 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+
 import { Template } from '../container';
 import Main from './Main';
+import history from './history';
 
 const Route = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <Template>
       <Main />
     </Template>
-  </BrowserRouter>
+  </Router>
 );
 
 export default Route;
