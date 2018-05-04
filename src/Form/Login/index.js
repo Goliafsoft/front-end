@@ -7,6 +7,6 @@ import withStyles from './withStyles';
 export default compose(
   withStyles,
   reduxForm({
-    form: 'simple',
+    form: 'login',
   }),
 )(Component);

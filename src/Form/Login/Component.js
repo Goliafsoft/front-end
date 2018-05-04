@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import Visibility from 'material-ui-icons/Visibility';
 import VisibilityOff from 'material-ui-icons/VisibilityOff';
 
-import { TextField } from '../../../component/Fields';
-import { SaveButton } from '../../../component/Button';
+import { TextField } from '../../component/Fields/index';
+import { SaveButton } from '../../component/Button/index';
 
-import Form from '../../../component/Form';
+import Form from '../Base';
 
 class LoginForm extends Component {
   state = {

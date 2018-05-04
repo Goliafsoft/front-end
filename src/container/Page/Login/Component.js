@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import { LoginForm } from '../../Form/index';
+import { LoginForm } from '../../../Form/index';
 
 import { page } from '../../../hoc';
 
