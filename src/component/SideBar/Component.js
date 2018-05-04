@@ -6,6 +6,7 @@ import history from '../../Route/history';
 
 import MenuElement from './MenuElement';
 import config from './config';
+import logo from '../../asset/image/logo.svg';
 
 class SideBar extends Component {
   static contextTypes = {
@@ -20,7 +21,6 @@ class SideBar extends Component {
   onLogoClick = () => this.changeUrl('/');
 
   changeUrl = (url) => {
-    console.log(this);
     this.history.push(url);
   };
 
@@ -35,7 +35,7 @@ class SideBar extends Component {
       <div className={sideBarClassName}>
         <div className={classes.sideBarInclude}>
           <Button fullWidth classes={logoClasses} onClick={this.onLogoClick}>
-            <img className={classes.logoImage} src="/src/asset/image/logo.svg" alt="logo" />
+            <img className={classes.logoImage} src={logo} alt="logo" />
             Eight pixels
           </Button>
           <menu className={classes.menu}>
@@ -49,7 +49,7 @@ class SideBar extends Component {
       </div>
     );
   }
-};
+}
 
 SideBar.propTypes = {
   classes: PropTypes.shape().isRequired,

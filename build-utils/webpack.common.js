@@ -5,6 +5,13 @@ module.exports = mode => ({
   output: {
     filename: '[chunkhash].bundle.js',
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: 'vendors',
+    },
+    runtimeChunk: true,
+  },
   module: {
     rules: [{
       test: /\.js$/,
@@ -20,6 +27,12 @@ module.exports = mode => ({
           options: { minimize: true },
         },
       ],
+    }, {
+      loader: 'file-loader',
+      exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+      options: {
+        name: 'static/media/[name].[hash:8].[ext]',
+      },
     }],
   },
   plugins: [

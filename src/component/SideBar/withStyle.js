@@ -1,4 +1,5 @@
 import { withStyles } from 'material-ui/styles';
+import sideBarImage from '../../asset/image/side-bar.jpg';
 
 const style = ({
   sideBar, header, spacing, palette,
@@ -8,7 +9,7 @@ const style = ({
     transition: sideBar.transition(''),
     position: 'absolute',
     height: '100vh',
-    backgroundImage: 'url("src/asset/image/side-bar.jpg")',
+    backgroundImage: `url("${sideBarImage}")`,
     backgroundSize: 'auto 100%',
     backgroundPositionX: 182,
     backgroundPosition: 'center',
