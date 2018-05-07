@@ -6,10 +6,6 @@ module.exports = mode => ({
     filename: '[chunkhash].bundle.js',
   },
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-      name: 'vendors',
-    },
     runtimeChunk: true,
   },
   module: {
