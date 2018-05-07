@@ -9,5 +9,8 @@ export default {
     {
       id: 3, label: 'Dashboard', iconName: 'dashboard', href: '/dashboard',
     },
+    {
+      id: 4, label: 'Login', iconName: 'dashboard', href: '/login',
+    },
   ],
 };
