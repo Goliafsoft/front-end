@@ -1,5 +1,5 @@
 import { compose, lifecycle, withHandlers, branch, withState, renderComponent } from 'recompose';
-import { CriticalError } from '../component';
+import CriticalError from 'component/CriticalError';
 
 export default compose(
   withState('state', 'setState', { hasError: false }),

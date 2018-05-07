@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
-import { SnackBar, Header, SideBar } from '../../component';
+import SnackBar from 'component/SnackBar';
+import Header from 'component/Header';
+import SideBar from 'component/SideBar';
 
 const Component = ({
   classes, children, snackBarMessage, openSnackBar, closeSnackBar, isSideBarOpen, toggleSideBar,

@@ -1,5 +1,8 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
+
+const SRC_PATH = path.resolve(__dirname, '../src');
 
 module.exports = mode => ({
   output: {
@@ -7,6 +10,9 @@ module.exports = mode => ({
   },
   optimization: {
     runtimeChunk: true,
+  },
+  resolve: {
+    modules: [SRC_PATH, 'node_modules'],
   },
   module: {
     rules: [{
@@ -17,12 +23,10 @@ module.exports = mode => ({
       },
     }, {
       test: /\.html$/,
-      use: [
-        {
-          loader: 'html-loader',
-          options: { minimize: true },
-        },
-      ],
+      use: [{
+        loader: 'html-loader',
+        options: { minimize: true },
+      }],
     }, {
       loader: 'file-loader',
       exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],

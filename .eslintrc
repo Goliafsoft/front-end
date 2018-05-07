@@ -10,6 +10,14 @@
     "jsx-a11y/href-no-hash": "off",
     "import/no-extraneous-dependencies": "off"
   },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "build-utils/webpack.common"
+      }
+    }
+  },
+
   "env": {
     "browser": true,
     "node": true,
