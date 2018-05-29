@@ -1,12 +1,13 @@
-import React, { cloneElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 
-import IconButton from 'material-ui/IconButton';
 import Input, { InputLabel, InputAdornment } from 'material-ui/Input';
 import { FormControl } from 'material-ui/Form';
 import Info from 'material-ui-icons/Info';
 import Tooltip from 'material-ui/Tooltip';
+
+import InputIcon from './Icon';
 
 const CustomTextField = ({
   input,
@@ -19,23 +20,21 @@ const CustomTextField = ({
   meta: { touched, error },
   ...custom
 }) => {
-  const IconElement = onIconClick ? (
-    <IconButton onClick={onIconClick} color="primary">
-      {Icon}
-    </IconButton>)
-    : cloneElement(Icon, { color: 'primary', className: classes.icon });
+  const isError = touched && !!error;
+  const inputLabel = isError ? error : label;
+
   return (
     <FormControl className={classes.input}>
-      <InputLabel>{error || label}</InputLabel>
+      <InputLabel error={isError}>{inputLabel}</InputLabel>
       <Input
-        error={touched && !!error}
+        error={isError}
         autoComplete={autoComplete}
         {...input}
         {...custom}
         endAdornment={
           <Tooltip title={tooltip}>
             <InputAdornment position="end">
-              {IconElement}
+              <InputIcon onIconClick={onIconClick} isError={isError} classes={classes} Icon={Icon} />
             </InputAdornment>
           </Tooltip>
         }

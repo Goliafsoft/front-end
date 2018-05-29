@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { page } from '../../../hoc';
+import { page } from 'hoc';
 
 @page
 class CustomComponent extends Component {
@@ -11,7 +11,7 @@ class CustomComponent extends Component {
   };
 
   static defaultProps = {
-    world: 'word',
+    world: 'Home2',
   };
 
   state = {

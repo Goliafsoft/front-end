@@ -8,6 +8,7 @@ import { TextField } from '../../component/Fields/index';
 import { SaveButton } from '../../component/Button/index';
 
 import Form from '../Base';
+import { required } from '../validatator';
 
 class LoginForm extends Component {
   state = {
@@ -29,6 +30,7 @@ class LoginForm extends Component {
           component={TextField}
           type="text"
           tooltip="Enter Name"
+          validate={[required]}
         />
         <Field
           name="password"
@@ -38,6 +40,7 @@ class LoginForm extends Component {
           onIconClick={this.togglePassword}
           tooltip={showPassword ? 'Hide Password' : 'Show Password'}
           Icon={showPassword ? <Visibility /> : <VisibilityOff />}
+          validate={[required]}
         />
         <SaveButton label="LOG IN" />
       </Form>

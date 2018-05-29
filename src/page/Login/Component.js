@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import { LoginForm } from '../../../Form/index';
+import LoginForm from 'form/Login';
 
-import { page } from '../../../hoc';
+import { page } from 'hoc';
 
 @page
 class LoginPage extends Component {

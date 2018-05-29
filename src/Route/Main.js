@@ -7,7 +7,7 @@ const Loading = () => <div>Loading...</div>;
 const NotFound = () => <div>not found</div>;
 
 const loadDynamicPage = name => Loadable({
-  loader: () => import(`../container/Page/${name}`),
+  loader: () => import(`../page/${name}`),
   loading: Loading,
 });
 

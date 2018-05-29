@@ -6,7 +6,7 @@ const SRC_PATH = path.resolve(__dirname, '../src');
 
 module.exports = mode => ({
   output: {
-    filename: '[chunkhash].bundle.js',
+    filename: '[chunkhash].[name].bundle.js',
   },
   optimization: {
     runtimeChunk: true,
@@ -39,6 +39,7 @@ module.exports = mode => ({
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(mode !== 'development'),
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new HtmlWebPackPlugin({
       favicon: './src/favicon.ico',
       template: './src/index.html',
