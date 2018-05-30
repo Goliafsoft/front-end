@@ -1,23 +1,42 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Loadable from 'react-loadable';
+import { withRouter } from 'react-router';
 
+import NotFound from 'component/NotFound';
+import connect from './connect';
+
+import CustomRoute from './Route';
 
 const Loading = () => <div>Loading...</div>;
-const NotFound = () => <div>not found</div>;
 
 const loadDynamicPage = name => Loadable({
   loader: () => import(`../page/${name}`),
   loading: Loading,
 });
 
-const SwitchPages = () => (
-  <Switch>
-    <Route exact path="/" component={loadDynamicPage('Home')} />
-    <Route path="/users" component={loadDynamicPage('Users')} />
-    <Route path="/login" component={loadDynamicPage('Login')} />
-    <Route component={NotFound} />
-  </Switch>
-);
+const SwitchPages = ({ isAuthorise, location: { pathname } }) => {
+  const isLogin = pathname === '/login';
 
-export default SwitchPages;
+  if (!isAuthorise && !isLogin) return <Redirect to="/login" />;
+  if (isAuthorise && isLogin) return <Redirect to="/" />;
+
+  return (
+    <Switch>
+      <CustomRoute exact path="/" Component={loadDynamicPage('Home')} />
+      <CustomRoute canVisit={false} path="/users" Component={loadDynamicPage('Users')} />
+      <CustomRoute path="/login" Component={loadDynamicPage('Login')} />
+      <CustomRoute Component={NotFound} />
+    </Switch>
+  );
+};
+
+SwitchPages.propTypes = {
+  isAuthorise: PropTypes.bool.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default withRouter(connect(SwitchPages));

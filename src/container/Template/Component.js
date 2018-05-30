@@ -7,11 +7,11 @@ import Header from 'component/Header';
 import SideBar from 'component/SideBar';
 
 const Component = ({
-  classes, children, snackBarMessage, openSnackBar, closeSnackBar, isSideBarOpen, toggleSideBar,
+  classes, children, snackBarMessage, openSnackBar, closeSnackBar, isSideBarOpen, toggleSideBar, isAuthorise, initials,
 }) => (
   <div className={classes.base}>
-    <SideBar open={isSideBarOpen} />
-    <Header open={isSideBarOpen} toggle={toggleSideBar} />
+    {isAuthorise && <SideBar open={isSideBarOpen} />}
+    {isAuthorise && <Header open={isSideBarOpen} toggle={toggleSideBar} initials={initials} />}
     <div className={classNames(classes.wrapper, { [classes.wrapperFull]: isSideBarOpen })}>
       {children}
     </div>
@@ -24,9 +24,11 @@ Component.propTypes = {
   children: PropTypes.node.isRequired,
   snackBarMessage: PropTypes.string.isRequired,
   openSnackBar: PropTypes.bool.isRequired,
+  isAuthorise: PropTypes.bool.isRequired,
   closeSnackBar: PropTypes.func.isRequired,
   isSideBarOpen: PropTypes.bool.isRequired,
   toggleSideBar: PropTypes.func.isRequired,
+  initials: PropTypes.string.isRequired,
 };
 
 export default Component;

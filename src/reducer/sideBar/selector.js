@@ -1,5 +1,5 @@
-const label = 'sideBar';
+const getState = state => state.sideBar;
 
 export default {
-  isSideBarOpen: state => state[label].open,
+  isSideBarOpen: state => getState(state).open,
 };

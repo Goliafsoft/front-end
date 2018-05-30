@@ -1,3 +1,6 @@
 export default {
-  done: false,
+  done: true,
+  name: 'Anton',
+  lastName: 'Bogatyrov',
+  authorise: false,
 };

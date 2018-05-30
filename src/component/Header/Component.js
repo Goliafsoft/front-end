@@ -30,7 +30,7 @@ class Header extends Component {
 
   render() {
     const { fullScreen, fullScreenEnable } = this.state;
-    const { classes, open, toggle } = this.props;
+    const { classes, open, toggle, initials } = this.props;
     const badgeClasses = { badge: classes.badge, root: classes.icons };
     const toolbarClassName = classNames(classes.tool, { [classes.toolOpen]: open });
 
@@ -54,7 +54,7 @@ class Header extends Component {
               </IconButton>
             </Badge>
             <IconButton aria-owns="menu-appbar" aria-haspopup="true" color="secondary">
-              <Avatar className={classes.avatar}>MD</Avatar>
+              <Avatar className={classes.avatar}>{initials}</Avatar>
             </IconButton>
           </div>
         </Toolbar>
@@ -67,6 +67,7 @@ Header.propTypes = {
   classes: PropTypes.shape().isRequired,
   open: PropTypes.bool.isRequired,
   toggle: PropTypes.func.isRequired,
+  initials: PropTypes.string.isRequired,
 };
 
 export default Header;
