@@ -6,14 +6,14 @@
 
 ```sh
  yarn
- yarn build:prod
+ yarn build
 ```
 
 ## Development Run
 
 ```sh
  yarn
- yarn serve
+ yarn start
 ```
 ## Check code
 
