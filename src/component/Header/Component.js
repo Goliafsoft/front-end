@@ -31,7 +31,7 @@ class Header extends Component {
   render() {
     const { fullScreen, fullScreenEnable } = this.state;
     const {
-      classes, open, toggle, initials
+      classes, open, toggle, initials,
     } = this.props;
     const badgeClasses = { badge: classes.badge, root: classes.icons };
     const toolbarClassName = classNames(classes.tool, { [classes.toolOpen]: open });

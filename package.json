@@ -13,7 +13,7 @@
     "cc": "node ./tool/create",
     "start": "webpack-dev-server --mode development",
     "build": "rimraf dist && webpack --mode production",
-    "precommit": "lint-staged & yarn test",
+    "precommit": "lint-staged && yarn test",
     "analyze": "rimraf stats.json && webpack --mode development --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "lint-staged": {
