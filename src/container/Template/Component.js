@@ -8,16 +8,22 @@ import SideBar from 'component/SideBar';
 
 const Component = ({
   classes, children, snackBarMessage, openSnackBar, closeSnackBar, isSideBarOpen, toggleSideBar, isAuthorise, initials,
-}) => (
-  <div className={classes.base}>
-    {isAuthorise && <SideBar open={isSideBarOpen} />}
-    {isAuthorise && <Header open={isSideBarOpen} toggle={toggleSideBar} initials={initials} />}
-    <div className={classNames(classes.wrapper, { [classes.wrapperFull]: isSideBarOpen })}>
-      {children}
+}) => {
+  const className = classNames(
+    classes.wrapper,
+    { [classes.wrapperFull]: isSideBarOpen, [classes.wrapperPage]: !isAuthorise },
+  );
+  return (
+    <div className={classes.base}>
+      {isAuthorise && <SideBar open={isSideBarOpen} />}
+      {isAuthorise && <Header open={isSideBarOpen} toggle={toggleSideBar} initials={initials} />}
+      <div className={className}>
+        {children}
+      </div>
+      <SnackBar open={openSnackBar} message={snackBarMessage} onClose={closeSnackBar} />
     </div>
-    <SnackBar open={openSnackBar} message={snackBarMessage} onClose={closeSnackBar} />
-  </div>
-);
+  );
+};
 
 Component.propTypes = {
   classes: PropTypes.shape().isRequired,

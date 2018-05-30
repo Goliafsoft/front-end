@@ -13,6 +13,10 @@ const style = ({ sideBar, header, spacing }) => ({
   wrapperFull: {
     paddingLeft: sideBar.getWidth(true) + (3 * spacing.unit),
   },
+  wrapperPage: {
+    height: '100vh',
+    padding: 0,
+  },
 });
 
 export default withStyles(style);
