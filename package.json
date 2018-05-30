@@ -16,6 +16,9 @@
     "precommit": "lint-staged & yarn test",
     "analyze": "rimraf stats.json && webpack --mode development --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint"
+  },
   "dependencies": {
     "classname": "^0.0.0",
     "lodash": "^4.17.5",
