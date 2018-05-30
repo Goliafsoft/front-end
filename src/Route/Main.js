@@ -5,11 +5,10 @@ import Loadable from 'react-loadable';
 import { withRouter } from 'react-router';
 
 import NotFound from 'component/NotFound';
+import Loading from 'component/Loading';
 import connect from './connect';
 
 import CustomRoute from './Route';
-
-const Loading = () => <div>Loading...</div>;
 
 const loadDynamicPage = name => Loadable({
   loader: () => import(`../page/${name}`),
