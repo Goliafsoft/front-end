@@ -17,7 +17,7 @@ class TabItem extends Component {
       label, classes, href, logo,
     } = this.props;
     const labelClassName = classNames(classes.label, { [classes.loading]: !label });
-    console.log(labelClassName);
+
     return (
       <NavLink to={href} activeClassName={classes.activeLink} className={classes.link}>
         <Button
@@ -28,8 +28,8 @@ class TabItem extends Component {
           <span className={labelClassName}> {label || <CircularProgress size={20} />}</span>
           <Close onClick={this.closeTab} color="primary" className={classNames(classes.icon, classes.deleteIcon)} />
         </Button>
-        <div className={classNames(classes.corner,classes.leftCorner)} />
-        <div className={classNames(classes.corner,classes.rightCorner)} />
+        <div className={classNames(classes.corner, classes.leftCorner)} />
+        <div className={classNames(classes.corner, classes.rightCorner)} />
         <div className={classNames(classes.split, classes.leftCornerSplit)} />
         <div className={classNames(classes.split, classes.rightCornerSplit)} />
       </NavLink>
