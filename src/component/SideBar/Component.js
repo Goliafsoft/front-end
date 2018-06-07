@@ -41,7 +41,7 @@ class SideBar extends Component {
           <menu className={classes.menu}>
             {config.menu.map(({ id, ...rest }) => (
               <li key={id}>
-                <MenuElement classes={classes} showTooltip={!open} onChange={this.changeUrl} {...rest} />
+                <MenuElement classes={classes} showTooltip={!open} {...rest} />
               </li>
             ))}
           </menu>

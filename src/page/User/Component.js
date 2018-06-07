@@ -11,7 +11,7 @@ class CustomComponent extends Component {
   };
 
   static defaultProps = {
-    world: 'users',
+    world: 'user',
   };
 
   state = {

@@ -68,6 +68,9 @@ const style = ({
     fontSize: '1rem',
     color: palette.secondary.main,
   },
+  link: {
+    textDecoration: 'none',
+  },
 });
 
 export default withStyles(style);

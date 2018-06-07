@@ -24,7 +24,8 @@ const SwitchPages = ({ isAuthorise, location: { pathname } }) => {
   return (
     <Switch>
       <CustomRoute exact path="/" Component={loadDynamicPage('Home')} />
-      <CustomRoute canVisit={false} path="/users" Component={loadDynamicPage('Users')} />
+      <CustomRoute path="/user/:id" Component={loadDynamicPage('User')} />
+      <CustomRoute path="/user" Component={loadDynamicPage('Users')} />
       <CustomRoute path="/login" Component={loadDynamicPage('Login')} />
       <CustomRoute Component={NotFound} />
     </Switch>

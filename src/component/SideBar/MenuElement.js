@@ -3,31 +3,33 @@ import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 import Icon from 'material-ui/Icon';
 import Tooltip from 'material-ui/Tooltip';
+import { NavLink } from 'react-router-dom';
 
-const SideBar = ({
-  classes, showTooltip, label, iconName, onChange, href,
+const MenuElement = ({
+  classes, showTooltip, label, iconName, href,
 }) => {
   const buttonClasses = { root: classes.button, label: classes.label };
   const tooltip = showTooltip ? label : '';
 
   return (
     <Tooltip title={tooltip} placement="right">
-      <Button onClick={() => onChange(href)} fullWidth classes={buttonClasses}>
-        <div className={classes.strip} />
-        <Icon className={classes.icon} >{iconName}</Icon>
-        {label}
-      </Button>
+      <NavLink className={classes.link} to={href}>
+        <Button fullWidth classes={buttonClasses}>
+          <div className={classes.strip} />
+          <Icon className={classes.icon} >{iconName}</Icon>
+          {label}
+        </Button>
+      </NavLink>
     </Tooltip>
   );
 };
 
-SideBar.propTypes = {
+MenuElement.propTypes = {
   classes: PropTypes.shape().isRequired,
   showTooltip: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
   iconName: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
   href: PropTypes.string.isRequired,
 };
 
-export default SideBar;
+export default MenuElement;

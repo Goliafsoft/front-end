@@ -1,7 +1,7 @@
 export default {
   menu: [
     {
-      id: 1, label: 'User Manager', iconName: 'people', href: '/users',
+      id: 1, label: 'User Manager', iconName: 'people', href: '/user',
     },
     {
       id: 2, label: 'Calendar', iconName: 'today', href: '/calendar',

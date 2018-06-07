@@ -7,6 +7,7 @@ const SRC_PATH = path.resolve(__dirname, '../src');
 module.exports = mode => ({
   output: {
     filename: '[chunkhash].[name].bundle.js',
+    publicPath: '/',
   },
   optimization: {
     runtimeChunk: true,

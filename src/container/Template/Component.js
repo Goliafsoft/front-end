@@ -5,9 +5,11 @@ import classNames from 'classname';
 import SnackBar from 'component/SnackBar';
 import Header from 'component/Header';
 import SideBar from 'component/SideBar';
+import Tab from 'component/Tab';
 
-const Component = ({
-  classes, children, snackBarMessage, openSnackBar, closeSnackBar, isSideBarOpen, toggleSideBar, isAuthorise, initials,
+const Template = ({
+  classes, children, snackBarMessage, openSnackBar, closeSnackBar, isSideBarOpen,
+  toggleSideBar, isAuthorise, initials, tabs,
 }) => {
   const className = classNames(
     classes.wrapper,
@@ -18,6 +20,7 @@ const Component = ({
       {isAuthorise && <SideBar open={isSideBarOpen} />}
       {isAuthorise && <Header open={isSideBarOpen} toggle={toggleSideBar} initials={initials} />}
       <div className={className}>
+        {isAuthorise && <Tab items={tabs} />}
         {children}
       </div>
       <SnackBar open={openSnackBar} message={snackBarMessage} onClose={closeSnackBar} />
@@ -25,7 +28,7 @@ const Component = ({
   );
 };
 
-Component.propTypes = {
+Template.propTypes = {
   classes: PropTypes.shape().isRequired,
   children: PropTypes.node.isRequired,
   snackBarMessage: PropTypes.string.isRequired,
@@ -35,6 +38,7 @@ Component.propTypes = {
   isSideBarOpen: PropTypes.bool.isRequired,
   toggleSideBar: PropTypes.func.isRequired,
   initials: PropTypes.string.isRequired,
+  tabs: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 
-export default Component;
+export default Template;
