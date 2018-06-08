@@ -20,10 +20,10 @@
     "*.{js,jsx}": "eslint"
   },
   "dependencies": {
+    "@material-ui/core": "^1.2.0",
+    "@material-ui/icons": "^1.1.0",
     "classname": "^0.0.0",
     "lodash": "^4.17.5",
-    "material-ui": "^1.0.0-beta.39",
-    "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-loadable": "^5.4.0",

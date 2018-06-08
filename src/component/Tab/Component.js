@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import Button from 'material-ui/Button';
-import AppsIcon from 'material-ui-icons/Apps';
-import Add from 'material-ui-icons/Add';
+import Button from '@material-ui/core/Button';
+import AppsIcon from '@material-ui/icons/Apps';
+import Add from '@material-ui/icons/Add';
 
 import Item from './Item';
 

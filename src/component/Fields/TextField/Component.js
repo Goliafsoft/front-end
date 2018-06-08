@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-import Input, { InputLabel, InputAdornment } from 'material-ui/Input';
-import { FormControl } from 'material-ui/Form';
-import Info from 'material-ui-icons/Info';
-import Tooltip from 'material-ui/Tooltip';
+import Input from '@material-ui/core/Input';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Info from '@material-ui/icons/Info';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import InputIcon from './Icon';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
-import Icon from 'material-ui/Icon';
-import Tooltip from 'material-ui/Tooltip';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import Tooltip from '@material-ui/core/Tooltip';
 import { NavLink } from 'react-router-dom';
 
 const MenuElement = ({

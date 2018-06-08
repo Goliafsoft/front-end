@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import Button from 'material-ui/Button';
-import Icon from 'material-ui/Icon';
-import Close from 'material-ui-icons/Close';
-import CircularProgress from 'material-ui/Progress/CircularProgress';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import Close from '@material-ui/icons/Close';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import classNames from 'classname';
 
 class TabItem extends Component {

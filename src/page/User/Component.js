@@ -7,7 +7,6 @@ import { page } from 'hoc';
 class CustomComponent extends Component {
   static propTypes = {
     world: PropTypes.string,
-    classes: PropTypes.shape().isRequired,
   };
 
   static defaultProps = {
@@ -20,9 +19,9 @@ class CustomComponent extends Component {
 
   render() {
     const { hello } = this.state;
-    const { world, classes } = this.props;
+    const { world } = this.props;
     return (
-      <div className={classes.base}>
+      <div>
         {hello} {world}
       </div>
     );

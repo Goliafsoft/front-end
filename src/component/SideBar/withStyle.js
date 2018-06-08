@@ -1,4 +1,5 @@
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
+
 import sideBarImage from '../../asset/image/side-bar.jpg';
 
 const style = ({

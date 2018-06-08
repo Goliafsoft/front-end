@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
-import Badge from 'material-ui/Badge';
-import Notifications from 'material-ui-icons/Notifications';
-import Avatar from 'material-ui/Avatar';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Badge from '@material-ui/core/Badge';
+import Notifications from '@material-ui/icons/Notifications';
+import Avatar from '@material-ui/core/Avatar';
 import classNames from 'classname';
-import Fullscreen from 'material-ui-icons/Fullscreen';
-import FullscreenExit from 'material-ui-icons/FullscreenExit';
+import Fullscreen from '@material-ui/icons/Fullscreen';
+import FullscreenExit from '@material-ui/icons/FullscreenExit';
 import screenfull from 'screenfull';
 
 class Header extends Component {

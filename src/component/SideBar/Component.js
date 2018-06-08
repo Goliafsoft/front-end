@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import history from '../../Route/history';
 
 import MenuElement from './MenuElement';
