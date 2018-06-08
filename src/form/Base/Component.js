@@ -15,7 +15,7 @@ class BaseForm extends Component {
 
   submit = () => {
     const { openSnackBar } = this.props;
-    openSnackBar('loooogin');
+    openSnackBar({ message: 'loooogin' });
   };
 
   render() {
