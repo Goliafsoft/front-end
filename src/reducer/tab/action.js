@@ -1,3 +1,3 @@
 export default {
-  INIT: 'INIT',
+  REMOVE_TAB: 'REMOVE_TAB',
 };

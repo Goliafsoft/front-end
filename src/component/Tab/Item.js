@@ -9,6 +9,8 @@ import classNames from 'classname';
 
 class TabItem extends Component {
   closeTab = (e) => {
+    const { closeTab, href } = this.props;
+    closeTab(href);
     e.preventDefault();
   };
 
@@ -40,6 +42,7 @@ class TabItem extends Component {
 TabItem.propTypes = {
   classes: PropTypes.shape().isRequired,
   label: PropTypes.string,
+  closeTab: PropTypes.func.isRequired,
   href: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
 };

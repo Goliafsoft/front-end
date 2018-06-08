@@ -7,7 +7,7 @@ import Add from 'material-ui-icons/Add';
 
 import Item from './Item';
 
-const Tab = ({ classes, items }) => (
+const Tab = ({ classes, items, closeTab }) => (
   <div className={classes.base}>
     <Button component={NavLink} color="primary" className={classes.linkIcon} to="/">
       <AppsIcon />
@@ -19,6 +19,7 @@ const Tab = ({ classes, items }) => (
         classes={classes}
         href={href}
         logo={logo}
+        closeTab={closeTab}
       />
     ))}
     <Button color="primary" className={classes.linkIcon} to="/">
@@ -29,6 +30,7 @@ const Tab = ({ classes, items }) => (
 
 Tab.propTypes = {
   classes: PropTypes.shape().isRequired,
+  closeTab: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 

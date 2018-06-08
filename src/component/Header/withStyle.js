@@ -7,6 +7,9 @@ const style = ({
     height: header.height * spacing.unit,
     marginLeft: sideBar.getWidth(),
     transition: sideBar.transition('margin'),
+    '& svg': {
+      color: palette.getContrastText(palette.primary.main),
+    },
   },
   toolOpen: {
     marginLeft: sideBar.getWidth(true),
@@ -25,7 +28,7 @@ const style = ({
     width: 4 * spacing.unit,
     height: 4 * spacing.unit,
     fontSize: '1rem',
-    color: palette.secondary.main,
+    color: palette.getContrastText(palette.primary.main),
     background: palette.primary.light,
   },
 });
