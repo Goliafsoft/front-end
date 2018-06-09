@@ -28,7 +28,6 @@ class CustomComponent extends Component {
       label: `User ${id}`,
       logo: 'people',
     });
-    console.log(id);
   }
 
   render() {
