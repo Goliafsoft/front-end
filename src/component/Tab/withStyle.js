@@ -4,7 +4,6 @@ const style = ({ spacing, palette }) => ({
   base: {
     display: 'flex',
     background: '#fff',
-    borderBottom: `2px solid ${palette.primary.main}`,
   },
   link: {
     width: spacing.unit * 30,
@@ -17,6 +16,8 @@ const style = ({ spacing, palette }) => ({
     paddingLeft: spacing.unit,
     paddingRight: spacing.unit,
     minWidth: 8 * spacing.unit,
+    borderBottom: `1px solid ${palette.primary.main}`,
+    borderRadius: 0,
   },
   icon: {
     marginRight: spacing.unit,
@@ -30,14 +31,14 @@ const style = ({ spacing, palette }) => ({
     display: 'flex',
     width: '100%',
     borderTop: `1px solid ${palette.primary.main}`,
+    borderBottom: `1px solid ${palette.primary.main}`,
+    background: '#e6e6e6',
+    borderRadius: 0,
   },
   activeLink: {
-    background: palette.primary.main,
     '& > button': {
-      color: palette.getContrastText(palette.primary.main),
-    },
-    '& svg': {
-      color: palette.getContrastText(palette.primary.main),
+      background: '#fff',
+      borderBottom: 0,
     },
   },
   leftCorner: {

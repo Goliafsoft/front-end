@@ -9,7 +9,7 @@ import Tab from 'container/Tab';
 
 const Template = ({
   classes, children, snackBarMessage, openSnackBar, closeSnackBar, isSideBarOpen,
-  toggleSideBar, isAuthorise, initials,
+  toggleSideBar, isAuthorise, initials, undo,
 }) => {
   const className = classNames(
     classes.wrapper,
@@ -23,7 +23,7 @@ const Template = ({
         {isAuthorise && <Tab />}
         {children}
       </div>
-      <SnackBar open={openSnackBar} message={snackBarMessage} onClose={closeSnackBar} />
+      <SnackBar open={openSnackBar} message={snackBarMessage} onClose={closeSnackBar} undo={undo} />
     </div>
   );
 };
@@ -38,6 +38,11 @@ Template.propTypes = {
   isSideBarOpen: PropTypes.bool.isRequired,
   toggleSideBar: PropTypes.func.isRequired,
   initials: PropTypes.string.isRequired,
+  undo: PropTypes.func,
+};
+
+Template.defaultProps = {
+  undo: undefined,
 };
 
 export default Template;

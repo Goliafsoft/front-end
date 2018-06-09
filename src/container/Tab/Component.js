@@ -25,6 +25,7 @@ class TabsContainer extends Component {
       <Tab
         items={tabs}
         closeTab={closeTab}
+        rollUpUrl={`/${history.location.pathname.split('/')[1]}`}
       />
     );
   }

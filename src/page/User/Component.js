@@ -7,6 +7,9 @@ import { page } from 'hoc';
 class CustomComponent extends Component {
   static propTypes = {
     world: PropTypes.string,
+    openTab: PropTypes.func.isRequired,
+    match: PropTypes.shape().isRequired,
+    location: PropTypes.shape().isRequired,
   };
 
   static defaultProps = {
@@ -16,6 +19,17 @@ class CustomComponent extends Component {
   state = {
     hello: 'hello',
   };
+
+  componentDidMount() {
+    const { openTab, match, location } = this.props;
+    const { id } = match.params;
+    openTab({
+      href: location.pathname,
+      label: `User ${id}`,
+      logo: 'people',
+    });
+    console.log(id);
+  }
 
   render() {
     const { hello } = this.state;

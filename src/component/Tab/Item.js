@@ -27,7 +27,7 @@ class TabItem extends Component {
           className={classes.tabButton}
         >
           <Icon className={classes.icon} >{logo}</Icon>
-          <span className={labelClassName}> {label || <CircularProgress size={20} />}</span>
+          <span className={labelClassName}> {label || <CircularProgress size={18} />}</span>
           <Close onClick={this.closeTab} color="primary" className={classNames(classes.icon, classes.deleteIcon)} />
         </Button>
         <div className={classNames(classes.corner, classes.leftCorner)} />

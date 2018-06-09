@@ -1,7 +1,7 @@
 import history from 'Route/history';
 
 const getState = state => state.tab;
-const getTabs = state => getState(state).value;
+const getTabs = state => getState(state).value.sort((a, b) => a.index - b.index);
 
 const getActiveTabIndex = state => getTabs(state).findIndex(({ href }) => (href === history.location.pathname));
 

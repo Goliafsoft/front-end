@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import { NavLink } from 'react-router-dom';
 import { page } from 'hoc';
 
 @page
@@ -22,6 +22,8 @@ class CustomComponent extends Component {
     const { world } = this.props;
     return (
       <div>
+        <NavLink to="/user/1">User 1</NavLink>
+        <NavLink to="/user/2">User 1</NavLink>
         {hello} {world}
       </div>
     );

@@ -1,6 +1,7 @@
-const label = 'snackBar';
+const getState = state => state.snackBar;
 
 export default {
-  getSnackBarMessage: state => state[label].message,
-  getIsSnackBarOpen: state => state[label].open,
+  getSnackBarMessage: state => getState(state).message,
+  getIsSnackBarOpen: state => getState(state).open,
+  getUndo: state => getState(state).undo,
 };

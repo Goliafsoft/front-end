@@ -8,6 +8,7 @@ export default function (state) {
     openSnackBar: snackBarSelector.getIsSnackBarOpen(state),
     snackBarMessage: snackBarSelector.getSnackBarMessage(state),
     isSideBarOpen: sideBarSelector.isSideBarOpen(state),
+    undo: snackBarSelector.getUndo(state),
     isAuthorise: authSelector.isAuthorise(state),
     initials: authSelector.getInitials(state),
   };

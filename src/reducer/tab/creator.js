@@ -8,6 +8,8 @@ const removeTab = createAction(action.REMOVE_TAB);
 
 export default {
   removeTab,
+  openTab: createAction(action.OPEN_TAB),
+  resetTab: createAction(action.RESET_TAB),
   closeTab(href) {
     return (dispatch, getState) => {
       const isActiveTab = history.location.pathname === href;

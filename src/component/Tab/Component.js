@@ -7,9 +7,11 @@ import Add from '@material-ui/icons/Add';
 
 import Item from './Item';
 
-const Tab = ({ classes, items, closeTab }) => (
+const Tab = ({
+  classes, items, closeTab, rollUpUrl,
+}) => (
   <div className={classes.base}>
-    <Button component={NavLink} color="primary" className={classes.linkIcon} to="/">
+    <Button component={NavLink} color="primary" className={classes.linkIcon} to={rollUpUrl} >
       <AppsIcon />
     </Button>
     {items.map(({ label, href, logo }) => (
@@ -31,6 +33,7 @@ const Tab = ({ classes, items, closeTab }) => (
 Tab.propTypes = {
   classes: PropTypes.shape().isRequired,
   closeTab: PropTypes.func.isRequired,
+  rollUpUrl: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 

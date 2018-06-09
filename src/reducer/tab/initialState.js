@@ -19,10 +19,10 @@ export default {
       href: '/user/3',
     },
     {
-      index: 3,
+      index: 4,
       logo: 'people',
       href: '/user/4',
     },
   ],
-  reset: [],
+  reset: undefined,
 };

@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import teal from '@material-ui/core/colors/blueGrey';
+import teal from '@material-ui/core/colors/teal';
 import grey from '@material-ui/core/colors/grey';
 
 const OPEN_SIDE_BAR_WIDTH = 30;
