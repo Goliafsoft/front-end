@@ -40,6 +40,9 @@ const style = ({ spacing, palette }) => ({
       background: '#fff',
       borderBottom: 0,
     },
+    '& > button:hover': {
+      background: '#fff',
+    },
   },
   leftCorner: {
     left: 0,
