@@ -1,5 +1,5 @@
-import { creator as snackBarCreator } from 'reducer/snackBar';
-import { creator as sideBarCreator } from 'reducer/sideBar';
+import snackBarCreator from 'reducer/snackBar/selector';
+import sideBarCreator from 'reducer/sideBar/selector';
 
 const { closeSnackBar } = snackBarCreator;
 const { toggleSideBar } = sideBarCreator;

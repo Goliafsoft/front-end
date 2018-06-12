@@ -15,6 +15,11 @@ const loadDynamicPage = name => Loadable({
   loading: Loading,
 });
 
+const User = loadDynamicPage('User');
+const Home = loadDynamicPage('Home');
+const Users = loadDynamicPage('Users');
+const Login = loadDynamicPage('Login');
+
 const SwitchPages = ({ isAuthorise, location: { pathname } }) => {
   const isLogin = pathname === '/login';
 
@@ -23,10 +28,10 @@ const SwitchPages = ({ isAuthorise, location: { pathname } }) => {
 
   return (
     <Switch>
-      <CustomRoute exact path="/" Component={loadDynamicPage('Home')} />
-      <CustomRoute path="/user/:id" Component={loadDynamicPage('User')} />
-      <CustomRoute path="/user" Component={loadDynamicPage('Users')} />
-      <CustomRoute path="/login" Component={loadDynamicPage('Login')} />
+      <CustomRoute exact path="/" Component={Home} />
+      <CustomRoute path="/user/:id" Component={User} />
+      <CustomRoute path="/user" Component={Users} />
+      <CustomRoute path="/login" Component={Login} />
       <CustomRoute Component={NotFound} />
     </Switch>
   );

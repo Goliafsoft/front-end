@@ -8,6 +8,12 @@ const HEADER_HEIGHT = 8;
 
 const baseTheme = createMuiTheme({});
 
+const color = {
+  white: '#fff',
+  grey: '#e6e6e6',
+  darkGrey: '#9e9e9e',
+};
+
 export default createMuiTheme({
   palette: {
     primary: {
@@ -27,7 +33,7 @@ export default createMuiTheme({
   sideBar: {
     openWidth: OPEN_SIDE_BAR_WIDTH,
     closeWidth: CLOSE_SIDE_BAR_WIDTH,
-    color: grey[500],
+    color: teal[400],
     background: 'rgba(0,0,0, 0.7)',
     transition: (val = 'width') => `${val} .35s ${baseTheme.transitions.easing.easeInOut}`,
     getWidth(isOpen = false) {
@@ -35,4 +41,11 @@ export default createMuiTheme({
       return width * baseTheme.spacing.unit;
     },
   },
+  tab: {
+    background: color.grey,
+    activeBackground: color.white,
+    wrapperBackground: color.white,
+    borderWidth: 1,
+  },
+  color,
 });

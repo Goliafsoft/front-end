@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import AppsIcon from '@material-ui/icons/Apps';
 import Add from '@material-ui/icons/Add';
 
-import Item from './Item';
+import Item from './ItemTab';
 
 const Tab = ({
   classes, items, closeTab, rollUpUrl,
@@ -27,6 +27,7 @@ const Tab = ({
     <Button color="primary" className={classes.linkIcon} to="/">
       <Add />
     </Button>
+    <div className={classes.rest} />
   </div>
 );
 

@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import sideBarImage from '../../asset/image/side-bar.jpg';
 
 const style = ({
-  sideBar, header, spacing, palette,
+  sideBar, header, spacing, palette, color,
 }) => ({
   sideBarClose: {
     width: sideBar.getWidth(),
@@ -35,9 +35,9 @@ const style = ({
     paddingRight: 0,
     minWidth: 0,
     overflow: 'hidden',
-    color: palette.secondary.dark,
+    color: color.darkGrey,
     '&:hover': {
-      color: palette.secondary.main,
+      color: color.white,
     },
     '&:hover div': {
       height: '100%',

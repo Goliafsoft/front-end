@@ -16,6 +16,7 @@ const style = ({
   },
   title: {
     flex: 1,
+    color: palette.getContrastText(palette.primary.main),
   },
   badge: {
     top: 0,

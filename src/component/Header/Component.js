@@ -42,7 +42,7 @@ class Header extends Component {
           <IconButton aria-label="Menu" color="secondary" onClick={toggle}>
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} type="title" color="secondary">
+          <Typography className={classes.title} type="title">
             Admin Panel
             {fullScreenEnable && (
               <IconButton color="secondary" onClick={this.toggleFullScreen}>

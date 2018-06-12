@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
-import SnackBar from 'component/SnackBar';
+import SnackBar from 'container/SnackBar';
 import Header from 'component/Header';
 import SideBar from 'component/SideBar';
 import Tab from 'container/Tab';
 
 const Template = ({
-  classes, children, snackBarMessage, openSnackBar, closeSnackBar, isSideBarOpen,
-  toggleSideBar, isAuthorise, initials, undo,
+  classes, children, isSideBarOpen, toggleSideBar, isAuthorise, initials,
 }) => {
   const className = classNames(
     classes.wrapper,
@@ -23,7 +22,7 @@ const Template = ({
         {isAuthorise && <Tab />}
         {children}
       </div>
-      <SnackBar open={openSnackBar} message={snackBarMessage} onClose={closeSnackBar} undo={undo} />
+      <SnackBar />
     </div>
   );
 };
@@ -31,18 +30,10 @@ const Template = ({
 Template.propTypes = {
   classes: PropTypes.shape().isRequired,
   children: PropTypes.node.isRequired,
-  snackBarMessage: PropTypes.string.isRequired,
-  openSnackBar: PropTypes.bool.isRequired,
   isAuthorise: PropTypes.bool.isRequired,
-  closeSnackBar: PropTypes.func.isRequired,
   isSideBarOpen: PropTypes.bool.isRequired,
   toggleSideBar: PropTypes.func.isRequired,
   initials: PropTypes.string.isRequired,
-  undo: PropTypes.func,
-};
-
-Template.defaultProps = {
-  undo: undefined,
 };
 
 export default Template;
