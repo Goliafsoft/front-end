@@ -25,6 +25,7 @@ class TabItem extends Component {
         <Button
           color="primary"
           className={classes.tabButton}
+          classes={{ label: classes.buttonLabel }}
         >
           <Icon className={classes.icon} >{logo}</Icon>
           <span className={labelClassName}> {label || <CircularProgress size={18} />}</span>

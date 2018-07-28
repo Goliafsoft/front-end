@@ -91,13 +91,15 @@ const style = ({
     label: {
       flex: 1,
       textAlign: 'left',
-      display: 'block',
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
     },
     loading: {
       textAlign: 'center',
+    },
+    buttonLabel: {
+      width: '100%',
     },
   });
 };

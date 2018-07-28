@@ -50,6 +50,11 @@ const style = ({
   label: {
     width: 'auto',
     whiteSpace: 'nowrap',
+    '& span': {
+      fontSize: 4 * spacing.unit,
+      marginLeft: (sideBar.getWidth() - (4 * spacing.unit)) / 2,
+      marginRight: (sideBar.getWidth() - (4 * spacing.unit)) / 2,
+    },
   },
   strip: {
     height: 0,
@@ -57,11 +62,6 @@ const style = ({
     background: palette.primary.dark,
     position: 'absolute',
     transition: sideBar.transition(''),
-  },
-  icon: {
-    fontSize: 4 * spacing.unit,
-    marginLeft: (sideBar.getWidth() - (4 * spacing.unit)) / 2,
-    marginRight: (sideBar.getWidth() - (4 * spacing.unit)) / 2,
   },
   logo: {
     height: header.height * spacing.unit,

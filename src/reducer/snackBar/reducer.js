@@ -1,10 +1,10 @@
 import { handleActions } from 'redux-actions';
 
-import creator from './creator';
+import { openSnackBar, closeSnackBar } from './creator';
 import initialState from './initialState';
 
 export default handleActions({
-  [creator.openSnackBar](state, { payload: { message, undo } }) {
+  [openSnackBar](state, { payload: { message, undo } }) {
     return {
       ...state,
       open: true,
@@ -12,7 +12,7 @@ export default handleActions({
       undo,
     };
   },
-  [creator.closeSnackBar]() {
+  [closeSnackBar]() {
     return initialState;
   },
 }, initialState);

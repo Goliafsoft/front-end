@@ -1,7 +1,4 @@
-import { creator as snackBarCreator } from 'reducer/snackBar';
-
-const { closeSnackBar } = snackBarCreator;
-
+import { closeSnackBar } from 'reducer/snackBar/creator';
 
 export default {
   closeSnackBar,

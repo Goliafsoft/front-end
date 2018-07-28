@@ -1,11 +1,5 @@
-import snackBarCreator from 'reducer/snackBar/selector';
-import sideBarCreator from 'reducer/sideBar/selector';
-
-const { closeSnackBar } = snackBarCreator;
-const { toggleSideBar } = sideBarCreator;
-
+import { toggleSideBar } from 'reducer/sideBar/creator';
 
 export default {
-  closeSnackBar,
   toggleSideBar,
 };
